@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "f205dab3-cccb-4be3-a2d9-779e1da3f344",
+		"name": "GroceryStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31705228"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"firstName\":\"Yogesh\",\r\n    \"lastName\":\"Chaudhari\",\r\n    \"email\":\"yogeshchaudhari245@gmail.com\",\r\n     \"storeName\":\"Yogesh Grocery\",\r\n     \"userType\":\"ADMIN\",\r\n    \"dateOfReg\": \"1999-04-08\",\r\n    \"userName\":\"yogesh2\",\r\n    \"phoneNumber\":\"7588702897\",\r\n    \"password\":\"Pass123$\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/grocery-store/registration/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"grocery-store",
+						"registration",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddGrocery",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Cucumber\",\r\n        \"cost\": \"20\",\r\n        \"availableQuantity\": \"50\",\r\n        \"userId\": \"2\"\r\n            \r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/grocery-store/grocery/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"grocery-store",
+						"grocery",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETGroceryList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/grocery-store/grocery/get?userId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"grocery-store",
+						"grocery",
+						"get"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Grocery",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Carrot\",\r\n        \"cost\": \"30\",\r\n        \"availableQuantity\": \"50\",\r\n        \"groceryId\": \"4\"\r\n            \r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/grocery-store/grocery/update?userId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"grocery-store",
+						"grocery",
+						"update"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Grocery",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/grocery-store/grocery/delete?groceryId=4&userId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"grocery-store",
+						"grocery",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "groceryId",
+							"value": "4"
+						},
+						{
+							"key": "userId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderItems\":[{\r\n        \"groceryId\":\"4\",\r\n        \"quantity\":\"5\"\r\n    },\r\n    {\r\n        \"groceryId\":\"5\",\r\n        \"quantity\":\"5\"\r\n    }],\r\n    \"userId\":\"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/grocery-store/order/place",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"grocery-store",
+						"order",
+						"place"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllGroceries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9098/grocery-store/order/grocery/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9098",
+					"path": [
+						"grocery-store",
+						"order",
+						"grocery",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
